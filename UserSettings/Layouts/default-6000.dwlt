@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 989
   m_ShowMode: 4
-  m_Title: Scene
+  m_Title: Hierarchy
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 112}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 347
+  controlID: 25
   draggingID: 0
 --- !u!114 &5
 MonoBehaviour:
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 112}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 348
+  controlID: 26
   draggingID: 0
 --- !u!114 &7
 MonoBehaviour:
@@ -385,7 +385,7 @@ MonoBehaviour:
       sizeOverridden: 0
     - dockPosition: 0
       containerId: overlay-toolbar__top
-      displayed: 0
+      displayed: 1
       id: Services/AI
       index: 5
       contents: '{"m_Layout":4,"m_Collapsed":false,"m_Folded":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":0.0,"y":0.0},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":0,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
@@ -537,20 +537,6 @@ MonoBehaviour:
       layout: 4
       size: {x: 0, y: 0}
       sizeOverridden: 0
-    - dockPosition: 1
-      containerId: overlay-toolbar__top
-      displayed: 0
-      id: Services/Environment
-      index: 8
-      contents: '{"m_Layout":4,"m_Collapsed":false,"m_Folded":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":0.0,"y":0.0},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":0,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
-      floating: 0
-      collapsed: 0
-      snapOffset: {x: 0, y: 0}
-      snapOffsetDelta: {x: 0, y: 0}
-      snapCorner: 0
-      layout: 4
-      size: {x: 0, y: 0}
-      sizeOverridden: 0
     m_ContainerData:
     - containerId: overlay-toolbar__top
       scrollOffset: 0
@@ -604,49 +590,8 @@ MonoBehaviour:
       m_LastClickedID:
         m_Data: 0
       m_ExpandedIDs:
-      - m_Data: -198148
-      - m_Data: -197918
-      - m_Data: -197720
-      - m_Data: -197498
-      - m_Data: -197250
-      - m_Data: -170996
-      - m_Data: -170976
-      - m_Data: -170966
-      - m_Data: -170726
-      - m_Data: -170526
-      - m_Data: -170304
-      - m_Data: -170054
-      - m_Data: -169832
-      - m_Data: -169634
-      - m_Data: -167084
-      - m_Data: -147238
-      - m_Data: -146968
-      - m_Data: -146756
-      - m_Data: -146534
-      - m_Data: -146326
-      - m_Data: -146104
-      - m_Data: -122410
-      - m_Data: -106958
-      - m_Data: -106748
-      - m_Data: -106468
-      - m_Data: -7892
-      - m_Data: -6882
-      - m_Data: -6684
-      - m_Data: -6486
-      - m_Data: -6286
-      - m_Data: -6054
-      - m_Data: -5842
-      - m_Data: -5642
-      - m_Data: 53638
-      - m_Data: 57292
-      - m_Data: 57332
-      - m_Data: 58612
-      - m_Data: 58810
-      - m_Data: 58844
-      - m_Data: 62310
-      - m_Data: 66058
-      - m_Data: 66818
-      - m_Data: 66976
+      - m_Data: -50396
+      - m_Data: -49038
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -783,7 +728,7 @@ MonoBehaviour:
   m_StartGridSize: 64
   m_LastFolders: []
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\chain\Documents\GitHub\FinalGameDesign
+  m_LastProjectPath: D:\Work\GitKraken\FinalGameDesign
   m_LockTracker:
     m_IsLocked: 0
   m_LastLocalAssetsSearchArea: 1
@@ -794,8 +739,8 @@ MonoBehaviour:
       m_Data: 0
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 47896
-    - m_Data: 47898
+    - m_Data: 50720
+    - m_Data: 50722
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -828,8 +773,8 @@ MonoBehaviour:
       m_Data: 0
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 47896
-    - m_Data: 47898
+    - m_Data: 50720
+    - m_Data: 50722
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1685,9 +1630,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 15.658245, y: -1.9598628, z: 4.6528287}
+    m_Target: {x: 21.658361, y: 3.7149374, z: 8.47594}
     speed: 2
-    m_Value: {x: 6.1375494, y: 4.3894944, z: 8.585328}
+    m_Value: {x: 21.658361, y: 3.7149374, z: 8.47594}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1733,13 +1678,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.13203178, y: -0.6547419, z: 0.117841125, w: -0.7348611}
+    m_Target: {x: -0.100240424, y: 0.4833907, z: -0.055657346, w: -0.86787987}
     speed: 2
-    m_Value: {x: -0.064580776, y: 0.8210511, z: -0.09473153, w: -0.55922294}
+    m_Value: {x: -0.100240424, y: 0.48339072, z: -0.05565735, w: -0.86787987}
   m_Size:
-    m_Target: 11.240323
+    m_Target: 1.00095
     speed: 2
-    m_Value: 1.787707
+    m_Value: 1.00095
   m_Ortho:
     m_Target: 0
     speed: 2
