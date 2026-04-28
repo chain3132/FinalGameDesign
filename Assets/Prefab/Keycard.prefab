@@ -125,4 +125,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c58562660cd353048b30e2f00047277d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Keycard
-  keyID: Lab_Room_01
+  keyID: MasterKeycard
