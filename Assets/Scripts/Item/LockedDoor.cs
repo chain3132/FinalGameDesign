@@ -21,13 +21,13 @@ public class LockedDoor : MonoBehaviour, IInteractable
             {
                 if (isLocked)
                 {
-                    if (inv.HasKey(requiredKeyID))
+                    if (inv.HasItem(requiredKeyID))
                     {
                         UnlockDoor();
                     }
                     else
                     {
-                        Debug.Log("คุณไม่มีกุญแจสำหรับประตูนี้!");
+                        Debug.Log("No key!");
                     }
                 }
                 else
@@ -35,27 +35,24 @@ public class LockedDoor : MonoBehaviour, IInteractable
                     OpenDoor();
                 }
             }
-            else
-            {
-                Debug.LogError("หา Script PlayerInventory ในตัว Player ไม่เจอ!");
-            }
-        }
-        else
-        {
-            Debug.LogError("หาตัว Player ในฉากไม่เจอ! (เช็ค Tag ดูนะ)");
         }
     }
 
     void UnlockDoor()
     {
         isLocked = false;
-        Debug.Log("ไขประตูสำเร็จ!");
+        Debug.Log("Unlock Door!");
     }
 
     void OpenDoor()
     {
-        Debug.Log("ประตูเปิดออกแล้ว!");
+        Debug.Log("Open Door!");
         // ใส่ Code Animation หรือหมุนประตูตรงนี้
         Destroy(this.gameObject);
+    }
+
+    void CloseDoor()
+    {
+        //ใส่ปิดประตู
     }
 }

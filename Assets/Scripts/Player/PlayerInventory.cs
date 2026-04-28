@@ -20,10 +20,25 @@ public class PlayerInventory : MonoBehaviour
         }
     }
 
-    public bool HasKey(string keyID)
+    public bool HasItem(string invitem)
     {
-        InventoryItem item = inventory.Find(i => i.itemName == keyID);
+        InventoryItem item = inventory.Find(i => i.itemName == invitem);
         return item != null && item.count > 0;
+    }
+
+    public void RemoveItem(string itemName)
+    {
+        InventoryItem item = inventory.Find(i => i.itemName == itemName);
+
+        if (item != null && item.count > 0)
+        {
+            item.count--;
+
+            if (item.count <= 0)
+            {
+                inventory.Remove(item);
+            }
+        }
     }
 }
 
@@ -39,3 +54,4 @@ public class InventoryItem
         count = 1;
     }
 }
+
