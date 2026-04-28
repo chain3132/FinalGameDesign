@@ -1,16 +1,31 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public float interactionDistance = 3f;
+    public LayerMask interactableLayer;
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            PerformInteraction();
+        }
+    }
+
+    void PerformInteraction()
+    {
+        Ray ray = new Ray(transform.position, transform.forward);
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit, interactionDistance, interactableLayer))
+        {
+            IInteractable interactable = hit.collider.GetComponent<IInteractable>();
+
+            if (interactable != null)
+            {
+                interactable.Interact();
+            }
+        }
     }
 }
