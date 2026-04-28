@@ -4,7 +4,7 @@ public class Keycard : MonoBehaviour, IInteractable
 {
     public string keyID;
 
-    public string GetDescription() => "กด E เพื่อเก็บ " + keyID;
+    public string GetDescription() => "Press E to get " + keyID;
 
     public void Interact()
     {
@@ -12,7 +12,7 @@ public class Keycard : MonoBehaviour, IInteractable
         if (player != null)
         {
             player.GetComponent<PlayerInventory>().AddKey(keyID);
-            Debug.Log("เก็บกุญแจเรียบร้อย: " + keyID);
+            Debug.Log("Get Key: " + keyID);
             Destroy(gameObject);
         }
     }

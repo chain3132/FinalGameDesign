@@ -7,7 +7,7 @@ public class LockedDoor : MonoBehaviour, IInteractable
 
     public string GetDescription() 
     {
-        return isLocked ? "ประตูนี้ถูกล็อคอยู่" : "กด E เพื่อเปิด";
+        return isLocked ? "This door locked" : "Press E to Open";
     }
 
     public void Interact()
