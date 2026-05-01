@@ -13,6 +13,10 @@ public class OxygenEventManager : MonoBehaviour
     public bool IsEventActive { get; private set; }
     public bool IsEventCompleted { get; private set; }
 
+    // GameFlowManager subscribe เพื่อรับ callback
+    public event System.Action OnEventFailed;
+    public event System.Action OnEventCompleted;
+
     private float remainingTime;
     private Image alertPanel;
     private TextMeshProUGUI alertText;
@@ -65,6 +69,7 @@ public class OxygenEventManager : MonoBehaviour
         IsEventActive = false;
         IsEventCompleted = true;
         if (blinkCoroutine != null) StopCoroutine(blinkCoroutine);
+        OnEventCompleted?.Invoke();
         alertPanel.color = new Color(0f, 0.28f, 0.14f, 0.92f);
         alertText.text = "◈  OXYGEN RESTORED  ◈";
         alertText.color = new Color(0f, 1f, 0.5f);
@@ -76,6 +81,7 @@ public class OxygenEventManager : MonoBehaviour
     {
         IsEventActive = false;
         if (blinkCoroutine != null) StopCoroutine(blinkCoroutine);
+        OnEventFailed?.Invoke();
         alertPanel.color = new Color(0.5f, 0f, 0f, 0.95f);
         alertText.text = "✕  OXYGEN DEPLETED  ✕";
         alertText.color = Color.white;
