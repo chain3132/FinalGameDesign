@@ -13,11 +13,11 @@ public class RadioNarrative : MonoBehaviour, IInteractable
     [Header("Dialogue")]
     [TextArea(2, 5)]
     public string[] lines = {
-        "[ สัญญาณวิทยุรบกวน... ]",
-        "\"...คือสถานี Helios-7... รับสัญญาณ SOS จาก Na-se...\"",
-        "\"...กำลังส่งหน่วยช่วยเหลือ... ประมาณการ 72 ชั่วโมง...\"",
-        "\"...อย่าออกจากสถานี... ทำซ้ำ อย่าออกจาก—\" [ สัญญาณขาด ]",
-        "อาร์ม: 72 ชั่วโมง... ฉันอาจรอไม่ได้ขนาดนั้น"
+        "[ Static interference... ]",
+        "\"...This is Station Helios-7... we received the SOS from Na-se...\"",
+        "\"...Dispatching a rescue unit... ETA 72 hours...\"",
+        "\"...Do NOT leave the station... Repeat, do NOT leave— \" [ Signal lost ]",
+        "Arm: 72 hours... I may not last that long."
     };
     public float typewriterSpeed = 36f;
 
@@ -66,11 +66,11 @@ public class RadioNarrative : MonoBehaviour, IInteractable
 
             // ชื่อผู้พูด: ถ้าขึ้นต้นด้วย '"' = สัญญาณวิทยุ, อื่นๆ = บรรยาย
             speakerLabel.text = line.StartsWith("\"") || line.StartsWith("[")
-                ? "〔 วิทยุ 〕"
-                : "อาร์ม";
+                ? "〔 Radio 〕"
+                : "Arm";
 
             yield return TypeLine(line);
-            promptText.text = "[ E / Space — ถัดไป ]";
+            promptText.text = "[ E / Space — Next ]";
             yield return new WaitUntil(() => inputPressed);
         }
 

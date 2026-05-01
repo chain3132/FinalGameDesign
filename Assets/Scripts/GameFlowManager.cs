@@ -191,7 +191,7 @@ public class GameFlowManager : MonoBehaviour
         var textGO = new GameObject("DeathText");
         textGO.transform.SetParent(overlayGO.transform, false);
         deathText = textGO.AddComponent<TextMeshProUGUI>();
-        deathText.text      = "ออกซิเจนหมด...\nระบบช่วยชีวิตล้มเหลว";
+        deathText.text      = "Oxygen depleted...\nLife support system failure.";
         deathText.fontSize  = 36;
         deathText.fontStyle = FontStyles.Bold;
         deathText.alignment = TextAlignmentOptions.Center;

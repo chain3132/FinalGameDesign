@@ -53,7 +53,7 @@ public class HidingCabinet : MonoBehaviour, IInteractable
     // ─── IInteractable ───────────────────────────
     public string GetDescription()
     {
-        return IsHiding ? "กด E เพื่อออกจากตู้" : "กด E เพื่อซ่อนตัวในตู้";
+        return IsHiding ? "Press E to exit the cabinet" : "Press E to hide inside";
     }
 
     public void Interact()
@@ -142,7 +142,7 @@ public class HidingCabinet : MonoBehaviour, IInteractable
         var textGO = new GameObject("HintText");
         textGO.transform.SetParent(bgGO.transform, false);
         exitHintText = textGO.AddComponent<TextMeshProUGUI>();
-        exitHintText.text = "[E]  ออกจากตู้";
+        exitHintText.text = "[E]  Exit cabinet";
         exitHintText.fontSize = 22;
         exitHintText.fontStyle = FontStyles.Bold;
         exitHintText.alignment = TextAlignmentOptions.Center;

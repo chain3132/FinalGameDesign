@@ -12,9 +12,9 @@ public class EscapeCapsule : MonoBehaviour, IInteractable
     public string GetDescription()
     {
         if (!AllStagesClear())
-            return "[ กระสวยอวกาศ — ยังไม่พร้อม ]";
+            return "[ Escape Shuttle — not ready ]";
 
-        return "กด E เพื่อหนีออกจากสถานี";
+        return "Press E to escape the station";
     }
 
     public void Interact()
