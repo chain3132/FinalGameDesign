@@ -94,6 +94,8 @@ public class CassetteDeck : MonoBehaviour, IInteractable
 
         if (lockPlayerWhileReading && playerMovement != null)
             playerMovement.enabled = true;
+
+        GameFlowManager.Instance?.CompleteSecurityRoom();
     }
 
     private IEnumerator TypeLine(string text)
