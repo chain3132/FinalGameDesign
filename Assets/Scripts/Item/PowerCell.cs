@@ -6,7 +6,7 @@ using UnityEngine;
 /// </summary>
 public class PowerCell : MonoBehaviour, IInteractable
 {
-    public string GetDescription() => "กด E เพื่อหยิบ Power Cell";
+    public string GetDescription() => "Press E to pick up Power Cell";
 
     public void Interact()
     {

@@ -36,9 +36,9 @@ public class LockedDoor : MonoBehaviour, IInteractable
     public string GetDescription()
     {
         if (isOpen)       return "";
-        if (!StageOK())   return "ยังไม่สามารถผ่านได้";
-        if (!KeyOK())     return "ต้องการ Keycard";
-        return "กด E เพื่อเปิดประตู";
+        if (!StageOK())   return "[ Access denied ]";
+        if (!KeyOK())     return "Keycard required";
+        return "Press E to open";
     }
 
     public void Interact()

@@ -79,7 +79,7 @@ public class NarrativeTrigger : MonoBehaviour
             promptText.text = "";
             yield return TypeLine(line);
 
-            promptText.text = "[ E / Space  —  ถัดไป ]";
+            promptText.text = "[ E / Space  —  Next ]";
             yield return new WaitUntil(() => inputPressed);
         }
 
@@ -184,41 +184,41 @@ public class NarrativeTrigger : MonoBehaviour
 
 /*
  ══════════════════════════════════════════════════════
-  ตัวอย่าง lines สำหรับแต่ละห้อง (copy ไปใส่ Inspector)
+  Example lines for each room (copy into Inspector)
  ══════════════════════════════════════════════════════
 
- ┌─ ห้องนอน (Bedroom) ──────────────────────────────────
- │ speakerName : อาร์ม
- │ triggerOnStart : ✓ (auto-trigger หลัง awakening)
+ ┌─ Bedroom ─────────────────────────────────────────────
+ │ speakerName : Arm
+ │ triggerOnStart : ✓ (auto-trigger after awakening)
  │
- │ "สัญญาณเตือนฉุกเฉิน... มันดังมาสักพักแล้ว"
- │ "บัดจ์ของฉัน... มันหายไปไหน"
- │ "ไม่มีเสียงคนเลย ทั้งๆ ที่ควรจะมีเวรกลางคืนอยู่..."
- │ "ต้องออกไปดูก่อน เริ่มจากห้องควบคุมระบบไฟฟ้า"
+ │ "Emergency alarm... it's been going off for a while now."
+ │ "My badge... where did it go?"
+ │ "Not a single sound. There should be a night shift here..."
+ │ "I need to check it out. Start with the electrical control room."
  └──────────────────────────────────────────────────────
 
- ┌─ ห้องควบคุมสถานีอวกาศ (ขอความช่วยเหลือ) ────────────
- │ speakerName : อาร์ม
+ ┌─ Station Control Room (distress call) ───────────────
+ │ speakerName : Arm
  │
- │ "นี่คืออุปกรณ์ส่งสัญญาณไปยังโลก... แต่มันเสียหายหนักมาก"
- │ "(พยายามเปิดระบบ) — วงจรขาด แทบทุกจุด"
- │ "ถ้าส่งสัญญาณขอความช่วยเหลือโดยตรงไม่ได้..."
- │ "รอก่อน — บันทึกระบบพูดถึงกระสวยฉุกเฉินที่ Docking Bay C"
- │ "ต้องหาทางไปให้ถึงที่นั่น"
+ │ "This is the transmitter to Earth... but it's heavily damaged."
+ │ "(Trying to power up) — Circuit breakers tripped. Almost every line."
+ │ "If I can't send a distress signal directly..."
+ │ "Wait — system logs mention an emergency shuttle at Docking Bay C."
+ │ "I need to find a way to get there."
  └──────────────────────────────────────────────────────
 
- ┌─ ห้อง Security (บทสรุป / Guard Log) ────────────────
- │ speakerName : [ บันทึก: ยาม Krit ]
+ ┌─ Security Room (summary / Guard Log) ────────────────
+ │ speakerName : [ Guard Log: Krit ]
  │
- │ "บันทึกของยาม Krit — วันที่ 14 มีนาคม 2387, 02:47 น."
- │ "มีสิ่งมีชีวิตแปลกปลอมบุกเข้ามาทางช่องระบายอากาศ ลูกเรือหลายคนหายตัวในชั่วข้ามคืน"
- │ "ฉันพยายามส่งสัญญาณ SOS ไปสถานี Helios-7 แต่ยังไม่มีการตอบรับ"
- │ "ถ้าใครได้อ่านบันทึกนี้ — ไปที่ Docking Bay C กระสวยฉุกเฉินยังใช้งานได้"
- │ "อย่าเสียเวลา สิ่งนั้นยังอยู่ในสถานี"
+ │ "Guard Krit's log — March 14, 2387, 02:47."
+ │ "Unknown life form breached through the ventilation ducts. Multiple crew members vanished overnight."
+ │ "I sent an SOS to Station Helios-7. No response yet."
+ │ "If anyone reads this — get to Docking Bay C. The emergency shuttle is still operational."
+ │ "Don't waste time. It's still in the station."
  │
- │ ── เพิ่ม NarrativeTrigger อีกชิ้นถัดจากชิ้นแรก ──
- │ speakerName : อาร์ม
- │ "...ดังนั้นนั่นคือสิ่งที่เกิดขึ้น"
- │ "ต้องรีบออกจากที่นี่ก่อนที่มันจะตามมาทัน"
+ │ ── add a second NarrativeTrigger right after ──
+ │ speakerName : Arm
+ │ "...So that's what happened."
+ │ "I have to get out before it catches up."
  └──────────────────────────────────────────────────────
 */

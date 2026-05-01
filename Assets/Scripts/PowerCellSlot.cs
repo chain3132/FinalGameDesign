@@ -17,12 +17,12 @@ public class PowerCellSlot : MonoBehaviour, IInteractable
     // ─────────────────────────────────────────────────────────────────────────
     public string GetDescription()
     {
-        if (IsFilled) return "[ วาง Power Cell แล้ว ]";
+        if (IsFilled) return "[ Power Cell installed ]";
 
         var inv = GetPlayerInventory();
         return inv != null && inv.HasItem("power_cell")
-            ? "กด E เพื่อวาง Power Cell"
-            : "ต้องการ Power Cell";
+            ? "Press E to insert Power Cell"
+            : "Power Cell required";
     }
 
     public void Interact()

@@ -20,10 +20,10 @@ public class EndingScreen : MonoBehaviour
 
     private static readonly string[] endingLines =
     {
-        "อาร์ม สตาร์ทเครื่องยนต์กระสวย...",
-        "สถานี Na-se ค่อยๆ หดเล็กลงในหน้าต่าง",
-        "ทุกสิ่งที่เกิดขึ้นที่นั่น — ยังคงเป็นปริศนา",
-        "แต่ตอนนี้... เขารอดแล้ว"
+        "Arm fires up the shuttle's engine...",
+        "Station Na-se slowly shrinks in the viewport.",
+        "Everything that happened there — still a mystery.",
+        "But for now... he's safe."
     };
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -143,7 +143,7 @@ public class EndingScreen : MonoBehaviour
         var btnTextGO = new GameObject("ButtonText");
         btnTextGO.transform.SetParent(btnGO.transform, false);
         var btnText = btnTextGO.AddComponent<TextMeshProUGUI>();
-        btnText.text      = "กลับเมนูหลัก";
+        btnText.text      = "Return to Main Menu";
         btnText.fontSize  = 22;
         btnText.fontStyle = FontStyles.Bold;
         btnText.alignment = TextAlignmentOptions.Center;

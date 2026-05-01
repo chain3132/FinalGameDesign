@@ -64,13 +64,13 @@ public class OxygenPipe : MonoBehaviour, IInteractable
     // ─── IInteractable ───────────────────────────
     public string GetDescription()
     {
-        if (IsRepaired) return "ท่อออกซิเจน  [ ซ่อมแล้ว ]";
+        if (IsRepaired) return "Oxygen pipe  [ Repaired ]";
         if (!EventIsActive()) return "";
 
         int pct = Mathf.RoundToInt((repairProgress / repairDuration) * 100f);
         return pct > 0
-            ? $"กด E ค้าง เพื่อซ่อมท่อออกซิเจน  ({pct}%)"
-            : "กด E ค้าง เพื่อซ่อมท่อออกซิเจน";
+            ? $"Hold E to repair oxygen pipe  ({pct}%)"
+            : "Hold E to repair oxygen pipe";
     }
 
     public void Interact()
@@ -179,7 +179,7 @@ public class OxygenPipe : MonoBehaviour, IInteractable
         var lblGO = new GameObject("LabelText");
         lblGO.transform.SetParent(repairUIRoot.transform, false);
         var lbl = lblGO.AddComponent<TextMeshProUGUI>();
-        lbl.text      = "ซ่อมท่อ";
+        lbl.text      = "Repairing";
         lbl.fontSize  = 15;
         lbl.alignment = TextAlignmentOptions.Center;
         lbl.color     = new Color(0.65f, 0.65f, 0.65f);

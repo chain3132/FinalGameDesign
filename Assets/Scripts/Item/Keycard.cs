@@ -10,7 +10,7 @@ public class Keycard : MonoBehaviour, IInteractable
     public string keycardID = "keycard_bedroom";
     public string displayName = "Keycard";
 
-    public string GetDescription() => $"กด E เพื่อหยิบ {displayName}";
+    public string GetDescription() => $"Press E to pick up {displayName}";
 
     public void Interact()
     {
