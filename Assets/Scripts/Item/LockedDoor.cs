@@ -13,10 +13,10 @@ using UnityEngine;
 /// </summary>
 public class LockedDoor : MonoBehaviour, IInteractable
 {
-    public enum DoorType { SplitSlide, SlideDown }
+    public enum DoorType { SplitSlide, SlideUp }
 
     [Header("Door Type")]
-    public DoorType doorType = DoorType.SlideDown;
+    public DoorType doorType = DoorType.SlideUp;
 
     [Header("SplitSlide — ลาก child panels ใส่ (ใช้เฉพาะ SplitSlide)")]
     public Transform leftPanel;
@@ -46,7 +46,7 @@ public class LockedDoor : MonoBehaviour, IInteractable
         if (isOpen || !StageOK() || !KeyOK()) return;
         isOpen = true;
         DisableColliders();
-        StartCoroutine(doorType == DoorType.SplitSlide ? OpenSplit() : OpenSlideDown());
+        StartCoroutine(doorType == DoorType.SplitSlide ? OpenSplit() : OpenSlideUp());
     }
 
     // ─── Checks ───────────────────────────────────────────────────────────────
@@ -98,11 +98,11 @@ public class LockedDoor : MonoBehaviour, IInteractable
     }
 
     // ─── Animation: SlideDown ─────────────────────────────────────────────────
-    private IEnumerator OpenSlideDown()
+    private IEnumerator OpenSlideUp()
     {
         Vector3 startPos = transform.localPosition;
         // เลื่อนลงตาม local Y ของ parent
-        Vector3 endPos   = startPos + Vector3.down * slideDistance;
+        Vector3 endPos   = startPos + Vector3.up * slideDistance;
 
         float t = 0f;
         while (t < openDuration)

@@ -31,8 +31,9 @@ public class IntroAwakening : MonoBehaviour
         "...",
         "My head is so heavy...",
         "What's that noise...?",
-        "This is... Station Na-se, isn't it?",
-        "Why isn't anyone responding to the radio...?"
+        "My badge... where did it go?",
+        "Not a single sound. There should be a night shift here...",
+        "I need to check it out. Start with the electrical control room."
     };
 
     private void Start()
@@ -44,6 +45,7 @@ public class IntroAwakening : MonoBehaviour
         BuildUI();
         StartCoroutine(AwakeSequence());
         StartCoroutine(ShakeCamera());
+        // lighting and sound effects can be triggered by the NarrativeTrigger in the bedroom, set to trigger on start
     }
 
     private void Update()

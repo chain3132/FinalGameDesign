@@ -80,6 +80,7 @@ public class RadioNarrative : MonoBehaviour, IInteractable
 
         // แจ้ง GameFlow ว่า control room (ขอความช่วยเหลือ) เสร็จแล้ว
         // (Radio อยู่ในห้อง Hacking ซึ่งถือว่าผ่านห้อง Control มาแล้ว)
+        GameFlowManager.Instance?.CompleteControlRoom();
     }
 
     private IEnumerator TypeLine(string text)

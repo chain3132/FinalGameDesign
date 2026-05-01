@@ -32,7 +32,7 @@ public class OxygenEventManager : MonoBehaviour
     private void Start()
     {
         BuildAlertUI();
-        TriggerOxygenEvent();
+        //TriggerOxygenEvent();
     }
 
     public void TriggerOxygenEvent()

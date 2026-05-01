@@ -45,6 +45,7 @@ public class HackingTerminal : MonoBehaviour, IInteractable
     private void OnAllPuzzlesComplete()
     {
         isHacked = true;
+        GameFlowManager.Instance?.CompleteHackingRoom();
         CloseTerminal();
         AlertAllAliens();
     }
@@ -56,6 +57,7 @@ public class HackingTerminal : MonoBehaviour, IInteractable
         {
             if (alien != null)
                 alien.ForceChase();
+            
         }
     }
 }

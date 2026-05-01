@@ -1,4 +1,4 @@
-using UnityEngine;
+    using UnityEngine;
 
 /// <summary>
 /// กระสวยหนีฉุกเฉิน — กด E เมื่อผ่านทุก stage แล้ว → จบเกม (แสดง EndingScreen)
