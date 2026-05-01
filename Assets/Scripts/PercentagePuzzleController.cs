@@ -400,7 +400,7 @@ public class PercentagePuzzleController : MonoBehaviour
             }
         });
 
-        MakeText("RTxt", go.transform, "↺",
+        MakeText("RTxt", go.transform, "Refresh",
             Vector2.zero, Vector2.one, 26, Color.white);
     }
 
