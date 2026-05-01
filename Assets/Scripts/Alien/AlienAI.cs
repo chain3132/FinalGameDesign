@@ -50,6 +50,9 @@ public class AlienAI : MonoBehaviour
 
     void CheckVision()
     {
+        // ถ้าถูก alert แล้ว ไม่ต้องใช้ vision — ไล่ตลอดเวลา
+        if (isAlerted) return;
+
         float distance = Vector3.Distance(transform.position, player.position);
 
         if (distance < visionRange)
@@ -70,4 +73,13 @@ public class AlienAI : MonoBehaviour
 
         if (currentState == State.Chase) currentState = State.Patrol;
     }
+
+    // เรียกจาก HackingTerminal เมื่อ hack สำเร็จ — ผีไล่ผู้เล่นทันทีโดยไม่ต้องเห็น
+    public void ForceChase()
+    {
+        isAlerted = true;
+        currentState = State.Chase;
+    }
+
+    public bool isAlerted = false;
 }

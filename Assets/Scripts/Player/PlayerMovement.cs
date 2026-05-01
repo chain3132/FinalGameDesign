@@ -42,14 +42,25 @@ public class PlayerMovement : MonoBehaviour
         lookInput = context.ReadValue<Vector2>();
     }
 
+    private void OnDisable()
+    {
+        // ล้าง input สะสมเพื่อไม่ให้กล้องกระชากตอน re-enable
+        moveInput = Vector2.zero;
+        lookInput = Vector2.zero;
+    }
+
     private void ApplyMovement()
     {
+        if (Cursor.lockState != CursorLockMode.Locked) return;
         moveDirection = transform.forward * moveInput.y + transform.right * moveInput.x;
         controller.Move(moveDirection * moveSpeed * Time.deltaTime);
     }
 
     private void ApplyRotation()
     {
+        // ไม่หมุนกล้องเมื่อ cursor ถูก unlock (เปิด UI อยู่)
+        if (Cursor.lockState != CursorLockMode.Locked) return;
+
         float mouseX = lookInput.x * mouseSensitivity;
         transform.Rotate(Vector3.up * mouseX);
 
