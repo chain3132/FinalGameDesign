@@ -1,2 +1,19 @@
 fileFormatVersion: 2
 guid: 4e82688be1e016b498adcf1849bd2820
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - agent: {instanceID: 0}
+  - animator: {instanceID: 0}
+  - player: {instanceID: 0}
+  - alienAudioSource: {instanceID: 0}
+  - alienLoopClip: {instanceID: 0}
+  - footstepAudioSource: {instanceID: 0}
+  - roarAudioSource: {instanceID: 0}
+  - attackRoarClip: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

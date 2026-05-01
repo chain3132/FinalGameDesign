@@ -126,22 +126,31 @@ public class GameFlowManager : MonoBehaviour
         if (alienPrefab == null) return;
         if (currentAlien != null) Destroy(currentAlien.gameObject);
 
-        var go = Instantiate(alienPrefab);
+        var spawnPoint = patrolPoints != null && patrolPoints.Length > 0 ? patrolPoints[0] : null;
+        var go = spawnPoint != null
+            ? Instantiate(alienPrefab, spawnPoint.position, spawnPoint.rotation)
+            : Instantiate(alienPrefab);
+
         currentAlien = go.GetComponent<AlienAI>();
         if (currentAlien == null) return;
 
         var playerGO = GameObject.FindGameObjectWithTag("Player");
         if (playerGO != null) currentAlien.player = playerGO.transform;
-        if (patrolPoints.Length > 0) currentAlien.patrolPoints = patrolPoints;
+        if (patrolPoints != null && patrolPoints.Length > 0) currentAlien.patrolPoints = patrolPoints;
     }
 
     // ─── Death / Restart ──────────────────────────────────────────────────────
-    private void HandleOxygenDeath()
+    public void HandleAlienAttack()
     {
-        StartCoroutine(DeathSequence());
+        StartCoroutine(DeathSequence("Alien attack...\nYou were caught."));
     }
 
-    private IEnumerator DeathSequence()
+    private void HandleOxygenDeath()
+    {
+        StartCoroutine(DeathSequence("Oxygen depleted...\nLife support system failure."));
+    }
+
+    private IEnumerator DeathSequence(string message)
     {
         // ล็อคการเคลื่อนที่
         var pm = FindObjectOfType<PlayerMovement>();
@@ -157,6 +166,7 @@ public class GameFlowManager : MonoBehaviour
             yield return null;
         }
         deathText.gameObject.SetActive(true);
+        deathText.text = message;
 
         yield return new WaitForSeconds(3f);
 
