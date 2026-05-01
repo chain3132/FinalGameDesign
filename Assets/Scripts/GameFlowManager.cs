@@ -71,11 +71,11 @@ public class GameFlowManager : MonoBehaviour
     {
         if (OxygenRoomComplete) return;
         OxygenRoomComplete = true;
-        // เอเลี่ยนกลับ patrol ปกติ (ไม่ไล่แล้ว)
+        // Destroy the oxygen-room alien once the oxygen event is complete.
         if (currentAlien != null)
         {
-            currentAlien.isAlerted    = false;
-            currentAlien.currentState = AlienAI.State.Patrol;
+            Destroy(currentAlien.gameObject);
+            currentAlien = null;
         }
     }
 
@@ -89,6 +89,7 @@ public class GameFlowManager : MonoBehaviour
     {
         if (HackingRoomComplete) return;
         HackingRoomComplete = true;
+        SpawnAlien(hackingPatrolPoints);
         // เปลี่ยน patrol ของเอเลี่ยนมายังห้อง Hacking
         if (currentAlien != null && hackingPatrolPoints.Length > 0)
             currentAlien.patrolPoints = hackingPatrolPoints;
