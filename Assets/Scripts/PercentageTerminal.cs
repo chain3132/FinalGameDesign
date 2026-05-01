@@ -13,6 +13,9 @@ public class PercentageTerminal : MonoBehaviour, IInteractable
     private PercentagePuzzleController puzzleController;
     private bool isSolved = false;
 
+    /// <summary>PowerRoomManager subscribe เพื่อรับ callback เมื่อ puzzle สำเร็จ</summary>
+    public event System.Action OnSolved;
+
     private void Awake()
     {
         if (puzzleUI != null)
@@ -48,6 +51,6 @@ public class PercentageTerminal : MonoBehaviour, IInteractable
     {
         isSolved = true;
         ClosePanel();
-        // เพิ่ม logic หลังสำเร็จได้ที่นี่ เช่น เปิดประตู หรือ alert alien
+        OnSolved?.Invoke();
     }
 }

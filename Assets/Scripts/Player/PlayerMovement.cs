@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Look Settings")]
     public float mouseSensitivity = 0.1f;
     public Transform cameraTransform; 
-    private float xRotation = 0f;
+    [HideInInspector] public float xRotation = 0f;
 
     void Start()
     {

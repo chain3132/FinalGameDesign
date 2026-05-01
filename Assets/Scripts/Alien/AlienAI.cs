@@ -50,6 +50,14 @@ public class AlienAI : MonoBehaviour
 
     void CheckVision()
     {
+        // ถ้าผู้เล่นซ่อนอยู่ในตู้ → มองไม่เห็น, หยุดไล่
+        var cabinet = FindObjectOfType<HidingCabinet>();
+        if (cabinet != null && cabinet.IsHiding)
+        {
+            if (currentState == State.Chase) currentState = State.Patrol;
+            return;
+        }
+
         // ถ้าถูก alert แล้ว ไม่ต้องใช้ vision — ไล่ตลอดเวลา
         if (isAlerted) return;
 
