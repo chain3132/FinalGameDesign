@@ -131,6 +131,9 @@ public class IntroAwakening : MonoBehaviour
         // แถบคำบรรยายกลางล่าง
         var subGO = new GameObject("SubtitlePanel");
         subGO.transform.SetParent(canvasGO.transform, false);
+        // ต้อง add Image ก่อน เพื่อให้ RectTransform ถูกสร้าง
+        var panelBG = subGO.AddComponent<Image>();
+        panelBG.color = new Color(0f, 0f, 0f, 0.6f);
         subtitleGroup = subGO.AddComponent<CanvasGroup>();
         subtitleGroup.alpha = 0f;
         var subRect = subGO.GetComponent<RectTransform>();
@@ -139,8 +142,7 @@ public class IntroAwakening : MonoBehaviour
         subRect.offsetMin = Vector2.zero;
         subRect.offsetMax = Vector2.zero;
 
-        var panelBG = subGO.AddComponent<Image>();
-        panelBG.color = new Color(0f, 0f, 0f, 0.6f);
+        
 
         var textGO = new GameObject("SubtitleText");
         textGO.transform.SetParent(subGO.transform, false);

@@ -1273,6 +1273,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c58562660cd353048b30e2f00047277d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Keycard
+  keycardID: keycard_bedroom
+  displayName: Keycard
 --- !u!1 &530625831
 GameObject:
   m_ObjectHideFlags: 0
@@ -2019,6 +2021,11 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -3960083818181802124, guid: 97b9bdf2fdce7024d846dd08016d22a2, type: 3}
+--- !u!1 &649221626 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1122329030659392, guid: a02ce749f148249039a33e6457063ccd, type: 3}
+  m_PrefabInstance: {fileID: 720382891}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &658750428 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 405724309483160037, guid: d03499a0ce871064e8f04d3a22c9b747, type: 3}
@@ -2169,6 +2176,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall_Door_02
       objectReference: {fileID: 0}
+    - target: {fileID: 1122329030659392, guid: a02ce749f148249039a33e6457063ccd, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4074057185741792, guid: a02ce749f148249039a33e6457063ccd, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.4285711
@@ -2235,13 +2246,59 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4074057185741792, guid: a02ce749f148249039a33e6457063ccd, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1451557158}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1122329030659392, guid: a02ce749f148249039a33e6457063ccd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 720382894}
+    - targetCorrespondingSourceObject: {fileID: 1122329030659392, guid: a02ce749f148249039a33e6457063ccd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 720382893}
   m_SourcePrefab: {fileID: 100100000, guid: a02ce749f148249039a33e6457063ccd, type: 3}
 --- !u!4 &720382892 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4074057185741792, guid: a02ce749f148249039a33e6457063ccd, type: 3}
   m_PrefabInstance: {fileID: 720382891}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &720382893
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 649221626}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &720382894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 649221626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e68bca573892104bb886cffc7eed88c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LockedDoor
+  doorType: 0
+  leftPanel: {fileID: 1990404989}
+  rightPanel: {fileID: 1451557158}
+  slideDistance: 2
+  openDuration: 0.6
+  requiredKeyID: keycard_bedroom
+  requiredStage: 
 --- !u!1 &775961664
 GameObject:
   m_ObjectHideFlags: 0
@@ -3768,8 +3825,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1317365619}
+  - component: {fileID: 1317365620}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: GameFlowManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3790,6 +3848,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1317365620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1317365618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db32c7660d4b87e4a8846248340c7812, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameFlowManager
+  BedroomComplete: 0
+  PowerRoomComplete: 0
+  OxygenRoomComplete: 0
+  ControlRoomComplete: 0
+  HackingRoomComplete: 0
+  SecurityRoomComplete: 0
+  alienPrefab: {fileID: 0}
+  oxygenPatrolPoints: []
+  hackingPatrolPoints: []
+  currentAlien: {fileID: 0}
 --- !u!1001 &1318402267
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4224,7 +4304,7 @@ GameObject:
   - component: {fileID: 1451557161}
   - component: {fileID: 1451557160}
   - component: {fileID: 1451557159}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: _Door_Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5628,6 +5708,7 @@ GameObject:
   - component: {fileID: 1799675763}
   - component: {fileID: 1799675762}
   - component: {fileID: 1799675765}
+  - component: {fileID: 1799675766}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -5747,6 +5828,7 @@ MonoBehaviour:
   gravity: -9.81
   mouseSensitivity: 0.1
   cameraTransform: {fileID: 1002359363}
+  xRotation: 0
 --- !u!143 &1799675763
 CharacterController:
   m_ObjectHideFlags: 0
@@ -5915,6 +5997,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInventory
   inventory: []
+--- !u!114 &1799675766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1799675757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c6f53155520e3d4fa2f654ad5ce8113, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::IntroAwakening
+  playerMovement: {fileID: 1799675762}
+  fadeInDuration: 5
+  linePauseDuration: 2.2
 --- !u!1001 &1803240418
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6893,7 +6990,7 @@ GameObject:
   - component: {fileID: 1990404992}
   - component: {fileID: 1990404991}
   - component: {fileID: 1990404990}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: _Door_Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8693,15 +8790,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6124357269673113485, guid: 7f438b7c820d89c4ea2ce769fb52a0c2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.3555698
+      value: 3.362
       objectReference: {fileID: 0}
     - target: {fileID: 6124357269673113485, guid: 7f438b7c820d89c4ea2ce769fb52a0c2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.6657505
+      value: 2.696
       objectReference: {fileID: 0}
     - target: {fileID: 6124357269673113485, guid: 7f438b7c820d89c4ea2ce769fb52a0c2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10.749839
+      value: 10.757
       objectReference: {fileID: 0}
     - target: {fileID: 6124357269673113485, guid: 7f438b7c820d89c4ea2ce769fb52a0c2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8734,6 +8831,10 @@ PrefabInstance:
     - target: {fileID: 6896637007666228535, guid: 7f438b7c820d89c4ea2ce769fb52a0c2, type: 3}
       propertyPath: m_Name
       value: Keycard_Model
+      objectReference: {fileID: 0}
+    - target: {fileID: 6896637007666228535, guid: 7f438b7c820d89c4ea2ce769fb52a0c2, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
