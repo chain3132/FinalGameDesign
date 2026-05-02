@@ -57,7 +57,6 @@ public class HackingTerminal : MonoBehaviour, IInteractable
         {
             if (alien != null)
                 alien.ForceChase();
-            
         }
     }
 }

@@ -41,7 +41,7 @@ public class RadioNarrative : MonoBehaviour, IInteractable
             inputPressed = true;
     }
 
-    public string GetDescription() => hasPlayed ? "[ วิทยุ — ใช้งานแล้ว ]" : "กด E เพื่อฟังวิทยุ";
+    public string GetDescription() => hasPlayed ? "[ Radio — Equiped ]" : "Press E for listen Radio";
 
     public void Interact()
     {
