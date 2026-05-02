@@ -2,7 +2,6 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-using static UnityEditor.Rendering.MaterialUpgrader;
 
 public class CassetteDeck : MonoBehaviour, IInteractable
 {
